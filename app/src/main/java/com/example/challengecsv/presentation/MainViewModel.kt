@@ -52,8 +52,8 @@ class MainViewModel(
             if(item.totalPerDay.toFloat() > maxLiveData.value!!) {
                 maxLiveData.postValue(item.totalPerDay.toFloat())
             }
-            if(item.secondMilking.toFloat() > minLiveData.value!!) {
-                minLiveData.postValue(item.totalPerDay.toFloat())
+            if(item.totalAnimals.toFloat() > minLiveData.value!!) {
+                minLiveData.postValue(item.firstMilking.toFloat())
             }
             if(item.average.toFloat() > averageLiveData.value!!) {
                 averageLiveData.postValue(item.average.toFloat())

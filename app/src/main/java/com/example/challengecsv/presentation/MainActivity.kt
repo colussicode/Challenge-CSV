@@ -16,16 +16,6 @@ import com.github.mikephil.charting.utils.ColorTemplate
 
 class MainActivity : AppCompatActivity() {
 
-//    var entrybaarList = arrayListOf(
-//        BarEntry(200f, 145f),
-//        BarEntry(30f, 245f),
-//        BarEntry(400f, 345f),
-//        BarEntry(500f, 445f),
-//        BarEntry(600f, 545f),
-//        BarEntry(700f, 645f),
-//    )
-
-
     private lateinit var dao: MilkingDAO
     private lateinit var binding: ActivityMainBinding
 
