@@ -16,6 +16,16 @@ import com.github.mikephil.charting.utils.ColorTemplate
 
 class MainActivity : AppCompatActivity() {
 
+//    var entrybaarList = arrayListOf(
+//        BarEntry(200f, 145f),
+//        BarEntry(30f, 245f),
+//        BarEntry(400f, 345f),
+//        BarEntry(500f, 445f),
+//        BarEntry(600f, 545f),
+//        BarEntry(700f, 645f),
+//    )
+
+
     private lateinit var dao: MilkingDAO
     private lateinit var binding: ActivityMainBinding
 
@@ -68,10 +78,7 @@ class MainActivity : AppCompatActivity() {
             binding.textviewMaxResult.text = it.toString()
         }
         viewModel.averageLiveData.observe(this) {
-            binding.textviewMediaResult.text = it.toString()
-        }
-        viewModel.delLiveData.observe(this) {
-            binding.textviewDelResult.text = it.toString()
+            binding.textviewAverageResult.text = it.toString()
         }
     }
 
@@ -80,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         dataset.colors = ColorTemplate.MATERIAL_COLORS.toMutableList()
         dataset.valueTextColor = Color.BLACK
         dataset.valueTextSize = 22f
+        dataset.barBorderWidth
 
         val data = BarData(dataset)
         binding.barChart.apply {
@@ -87,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             setData(data)
             animateY(2000)
             description.text = "Melhores Ordenhas"
+            barData.barWidth = 10f
         }
     }
 }

@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_green">#fbfff0</color>
     <color name="top">#99a47b</color>
+    <color name="title">#354112</color>
+    <color name="card_view">#c7d69f</color>
 </resources>
