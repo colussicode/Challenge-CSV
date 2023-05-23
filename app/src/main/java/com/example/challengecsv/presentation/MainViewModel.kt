@@ -27,8 +27,7 @@ class MainViewModel(
     var maxLiveData = MutableLiveData(0.0f)
     var minLiveData = MutableLiveData(0.0f)
     var averageLiveData = MutableLiveData(0.0f)
-    var delLiveData = MutableLiveData(0.0f)
-    var total = 0.0f
+    private var total = 0.0f
 
     fun readDataFromDatabaseAndConvert(){
         viewModelScope.launch(dispatcher) {
@@ -58,7 +57,6 @@ class MainViewModel(
             if(item.average.toFloat() > averageLiveData.value!!) {
                 averageLiveData.postValue(item.average.toFloat())
             }
-            delLiveData.postValue(item.totalAnimals.toFloat())
         }
         totalLiveData.postValue(total)
     }

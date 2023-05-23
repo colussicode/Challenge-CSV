@@ -9,7 +9,11 @@ const val DB_NAME = "milking-database"
 class MainApplication : Application() {
     lateinit var milkingDAO: MilkingDAO
     private fun buildDatabase() : AppDatabase {
-        return Room.databaseBuilder(applicationContext, AppDatabase::class.java, DB_NAME).fallbackToDestructiveMigration().build()
+        return Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, DB_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     override fun onCreate() {
