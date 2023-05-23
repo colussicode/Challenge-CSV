@@ -5,47 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.MainActivity"
-    android:layout_margin="16dp">
+    android:background="@color/background_green"
+    android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textview_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total:"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+    <TextView
+        android:id="@+id/textview_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-        <TextView
-            android:id="@+id/textview_total_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/textview_total"
-            app:layout_constraintTop_toTopOf="@id/textview_total"
-            tools:text="967,2"
-            android:layout_marginLeft="8dp"
-            android:textSize="24sp"/>
+    <TextView
+        android:id="@+id/textview_total_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/textview_total"
+        app:layout_constraintTop_toTopOf="@id/textview_total"
+        tools:text="967,2"
+        android:layout_marginLeft="8dp"
+        android:textSize="24sp"/>
 
-        <TextView
-            android:id="@+id/textview_max"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_total"
-            android:text="@string/m_ximo"
-            android:textSize="24sp"
-            android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/textview_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_total"
+        android:text="@string/m_ximo"
+        android:textSize="24sp"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:id="@+id/textview_max_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintStart_toEndOf="@id/textview_max"
-            app:layout_constraintTop_toTopOf="@id/textview_max"
-            tools:text="12,6"
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textview_max_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toEndOf="@id/textview_max"
+        app:layout_constraintTop_toTopOf="@id/textview_max"
+        tools:text="12,6"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textview_min"

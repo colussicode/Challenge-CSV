@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.challengecsv.MainApplication
 import com.example.challengecsv.data.MilkingDAO
 import com.example.challengecsv.databinding.ActivityMainBinding
-import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
 
 class MainActivity : AppCompatActivity() {
 
@@ -77,20 +77,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setBarDataset(entries: List<BarEntry>) {
         val dataset = BarDataSet(entries, "Média por dia")
-        dataset.color = Color.rgb(45, 145, 213)
-        dataset.color = Color.rgb(45, 145, 213)
-        dataset.setDrawValues(false)
+        dataset.colors = ColorTemplate.MATERIAL_COLORS.toMutableList()
+        dataset.valueTextColor = Color.BLACK
+        dataset.valueTextSize = 22f
 
         val data = BarData(dataset)
         binding.barChart.apply {
-            this.data = data
-            axisLeft.isEnabled = false
-            axisRight.isEnabled = false
-            xAxis.position = XAxis.XAxisPosition.BOTTOM
-            xAxis.setDrawGridLines(false)
-            xAxis.textColor = Color.GRAY
-            legend.isEnabled = false
-            invalidate()
+            setFitBars(true)
+            setData(data)
+            animateY(2000)
+            description.text = "Melhores Ordenhas"
         }
     }
 }

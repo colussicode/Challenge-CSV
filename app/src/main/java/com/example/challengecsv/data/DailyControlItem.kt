@@ -17,5 +17,4 @@ data class DailyControlItem(
     val total: String,
     val controlDate: String,
     val del: String,
-
 )

@@ -23,12 +23,12 @@ class MainViewModel(
 
     val barEntriesListLiveData: MutableLiveData<List<BarEntry>> = MutableLiveData<List<BarEntry>>()
     private val barEntriesList: ArrayList<BarEntry> = arrayListOf()
-
     var totalLiveData = MutableLiveData(0.0f)
     var maxLiveData = MutableLiveData(0.0f)
     var minLiveData = MutableLiveData(0.0f)
     var averageLiveData = MutableLiveData(0.0f)
     var delLiveData = MutableLiveData(0.0f)
+    var total = 0.0f
 
     fun readDataFromDatabaseAndConvert(){
         viewModelScope.launch(dispatcher) {
@@ -48,7 +48,7 @@ class MainViewModel(
 
     private fun fillValues(list: List<MilkingItem>) {
         list.forEach { item ->
-            totalLiveData.postValue(item.totalPerDay.toFloat() + item.secondMilking.toFloat())
+            total += (item.totalPerDay.toFloat() + item.secondMilking.toFloat())
             if(item.totalPerDay.toFloat() > maxLiveData.value!!) {
                 maxLiveData.postValue(item.totalPerDay.toFloat())
             }
@@ -60,6 +60,7 @@ class MainViewModel(
             }
             delLiveData.postValue(item.totalAnimals.toFloat())
         }
+        totalLiveData.postValue(total)
     }
 
     fun insertMilkingItemToDatabase(list: List<MilkingItem>) {
