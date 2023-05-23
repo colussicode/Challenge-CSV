@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChallengeCSV</string>
+    <string name="m_ximo">Máximo:</string>
+    <string name="m_nimo">Mínimo:</string>
+    <string name="m_dia">Média:</string>
+    <string name="del">DEL:</string>
+</resources>
